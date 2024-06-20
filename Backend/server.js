@@ -1,15 +1,15 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const { Client } = require('pg');
-const port = 4000;
+const port = process.env.PORT || 4000;
 
-// Postgres connection
 const client = new Client({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'users',
-  password: '12345678',
-  port: 5432
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT
 });
 client.connect();
 

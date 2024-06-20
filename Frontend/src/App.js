@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 
-const register = 'http://localhost:4000/register';
-const login = 'http://localhost:4000/login';
+const register = `${process.env.REACT_APP_API_URL}/register`;
+const login = `${process.env.REACT_APP_API_URL}/login`;
 
 function App() {
   return (
